@@ -67,6 +67,43 @@ Yeji Song (Seoul National University), Chaerin Kong (Seoul National University),
 		
         </tbody></table>
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+
+         <tr onmouseout="dpvton_stop()" onmouseover="dpvton_start()">
+            <td style="padding:20px;width:25%;vertical-align:middle">
+              <div class="one">
+                <div class="two" id='dpvton_image'>
+                  <img src='images/dpvton2.png' width="160"></div>
+                <img src='images/dpvton1.png' width="160">
+              </div>
+              <script type="text/javascript">
+                function dpvton_start() {
+                  document.getElementById('dpvton_image').style.opacity = "1";
+                }
+
+                function dpvton_stop() {
+                  document.getElementById('dpvton_image').style.opacity = "0";
+                }
+                dpvton_stop()
+              </script>
+            </td>
+            <td style="padding:20px;width:75%;vertical-align:middle">
+              <a href="https://openaccess.thecvf.com/content/CVPR2022W/CVFAD/html/Lee_Towards_Detailed_Characteristic-Preserving_Virtual_Try-On_CVPRW_2022_paper.html">
+                <papertitle>Towards Detailed Characteristic-Preserving Virtual Try-On</papertitle>
+              </a>
+              <br>
+              Sangho Lee*, <strong>Seoyoung Lee*</strong>,
+		    Joonseok Lee
+              <br>
+              <em>CVPR Workshops</em>, 2022 &nbsp <font color=#FF8080><strong>(Oral Presentation)</strong></font>
+              <br>
+              <a href="https://openaccess.thecvf.com/content/CVPR2022W/CVFAD/html/Lee_Towards_Detailed_Characteristic-Preserving_Virtual_Try-On_CVPRW_2022_paper.html">paper</a>
+              <p></p>
+              <p>
+              [xxx]
+              </p>
+            </td>
+          </tr>
+		
          <tr onmouseout="metaanalysis_stop()" onmouseover="metaanalysis_start()">
             <td style="padding:20px;width:25%;vertical-align:middle">
               <div class="one">
@@ -90,8 +127,8 @@ Yeji Song (Seoul National University), Chaerin Kong (Seoul National University),
                 <papertitle>Meta-Analysis of Randomized Clinical Trials Evaluating Effectiveness of a Multivitamin Supplementation against Oxidative Stress in Healthy Subjects</papertitle>
               </a>
               <br>
-              <strong>Seoyoung Lee</strong>,
-		    Iksoo Huh, Seunghee Kang, Yea-eun Nam, Youngseo Cho, Md Kamruzzaman, Jina Hong, Oran Kwon, Taesung Park
+              <strong>Seoyoung Lee*</strong>,
+		    Iksoo Huh*, Seunghee Kang, Yea-eun Nam, Youngseo Cho, Md Kamruzzaman, Jina Hong, Oran Kwon, Taesung Park
               <br>
               <em>Nutrients</em>, 2022 &nbsp <font color=#FF8080><strong>(Issue Cover)</strong></font>
               <br>
@@ -102,95 +139,6 @@ Yeji Song (Seoul National University), Chaerin Kong (Seoul National University),
               </p>
             </td>
           </tr>
-		
-          <tr onmouseout="dreamfusion_stop()" onmouseover="dreamfusion_start()">
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <div class="one">
-                <div class="two" id='dreamfusion_image'><video  width=100% height=100% muted autoplay loop>
-                <source src="images/dreamfusion.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-                </video></div>
-                <img src='images/dreamfusion.jpg' width="160">
-              </div>
-              <script type="text/javascript">
-                function dreamfusion_start() {
-                  document.getElementById('dreamfusion_image').style.opacity = "1";
-                }
-
-                function dreamfusion_stop() {
-                  document.getElementById('dreamfusion_image').style.opacity = "0";
-                }
-                dreamfusion_stop()
-              </script>
-            </td>
-            <td style="padding:20px;width:75%;vertical-align:middle">
-              <a href="https://dreamfusion3d.github.io/">
-                <papertitle>DreamFusion: Text-to-3D using 2D Diffusion</papertitle>
-              </a>
-              <br>
-              <a href="https://cs.stanford.edu/~poole/">Ben Poole</a>,
-              <a href="https://www.ajayj.com/">Ajay Jain</a>,
-              <strong>Jonathan T. Barron</strong>,
-							<a href="https://bmild.github.io/">Ben Mildenhall</a>
-              <br>
-              <em>arXiv</em>, 2022
-              <br>
-              <a href="https://dreamfusion3d.github.io/">project page</a>
-              /
-              <a href="https://arxiv.org/abs/2209.14988">arXiv</a>
-              /
-              <a href="https://dreamfusion3d.github.io/gallery.html">gallery</a>
-              <p></p>
-              <p>
-              We optimize a NeRF from scratch using a pretrained text-to-image diffusion model to do text-to-3D generative modeling.
-              </p>
-            </td>
-          </tr>
-		  
-          <tr onmouseout="samurai_stop()" onmouseover="samurai_start()">
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <div class="one">
-                <div class="two" id='samurai_image'>
-                  <img src='images/samurai_after.jpg' width="160"></div>
-                <img src='images/samurai_before.jpg' width="160">
-              </div>
-              <script type="text/javascript">
-                function samurai_start() {
-                  document.getElementById('samurai_image').style.opacity = "1";
-                }
-
-                function samurai_stop() {
-                  document.getElementById('samurai_image').style.opacity = "0";
-                }
-                samurai_stop()
-              </script>
-            </td>
-            <td style="padding:20px;width:75%;vertical-align:middle">
-              <a href="https://markboss.me/publication/2022-samurai/">
-                <papertitle>SAMURAI: Shape And Material from Unconstrained Real-world Arbitrary Image Collections</papertitle>
-              </a>
-              <br>
-              <a href="https://markboss.me">Mark Boss</a>, 
-              <a href="">Andreas Engelhardt</a>, 
-              <a href="https://abhishekkar.info/">Abhishek Kar</a>, 
-              <a href="http://people.csail.mit.edu/yzli/">Yuanzhen Li</a>, 
-              <a href="https://deqings.github.io/">Deqing Sun</a>, 
-              <strong>Jonathan T. Barron</strong>,
-              <a href="https://uni-tuebingen.de/en/faculties/faculty-of-science/departments/computer-science/lehrstuehle/computergrafik/computer-graphics/staff/prof-dr-ing-hendrik-lensch/">Hendrik P. A. Lensch</a>,
-              <a href="https://varunjampani.github.io">Varun Jampani</a>
-              <br>
-              <em>NeurIPS</em>, 2022
-              <br>
-              <a href="https://markboss.me/publication/2022-samurai/">project page</a> /
-              <a href="https://www.youtube.com/watch?v=LlYuGDjXp-8">video</a> /
-              <a href="https://arxiv.org/abs/2205.15768">arXiv</a>
-              <p></p>
-              <p>
-A joint optimization framework for estimating shape, BRDF, camera pose, and illumination from in-the-wild image collections.
-              </p>
-            </td>
-          </tr>		
-		
 					
         </tbody></table>
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
