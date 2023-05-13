@@ -68,6 +68,38 @@
 		
         </tbody></table>
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+
+         <tr onmouseout="dadnerf_stop()" onmouseover="dadnerf_start()">
+            <td style="padding:20px;width:25%;vertical-align:middle">  <!-- width="25%" valign="middle" padding="20px"-->
+              <div class="one">
+                <div class="two" id='dadnerf_image'>
+                  <img src='images/dadnerf_heat_map.png' width="160"></div>   <!-- meta_analysis_graphical_abstract.png -->
+                <img src='images/dadnerf_model.png' width="160">
+              </div>
+              <script type="text/javascript">
+                function dadnerf_start() {
+                  document.getElementById('dadnerf_image').style.opacity = "1";
+                }
+
+                function dadnerf_stop() {
+                  document.getElementById('dadnerf_image').style.opacity = "0";
+                }
+                dadnerf_stop()
+              </script>
+            </td>
+            <td style="padding:20px;width:75%;vertical-align:middle">  <!--width="75%" valign="middle" padding="20px"-->
+              <a href="https://sightsound.org/">
+                <papertitle>Disentangled Audio-Driven NeRF: Talking Head Generation with Detailed Identity-Specific Micro expressions</papertitle>
+              </a>
+              <br>
+              <strong>Seoyoung Lee*</strong>, Seongsu Ha*,
+		    Joonseok Lee
+              <br>
+              <em>CVPR Workshops: Sight and Sound</em>, 2023
+              <br>
+	      <a href="https://sightsound.org/">paper</a>
+            </td>
+          </tr>
 		
          <tr onmouseout="learning_to_wear_stop()" onmouseover="learning_to_wear_start()">
             <td style="padding:20px;width:25%;vertical-align:middle">  <!-- width="25%" valign="middle" padding="20px"-->
@@ -163,7 +195,7 @@
               Sangho Lee*, <strong>Seoyoung Lee*</strong>,
 		    Joonseok Lee
               <br>
-              <em>CVPR Workshops</em>, 2022 &nbsp <font color=#FF8080><strong>(Oral Presentation)</strong></font>
+              <em>CVPR Workshops: The 5th Workshop on Computer Vision for Fashion, Art, and Design</em>, 2022 &nbsp <font color=#FF8080><strong>(Oral Presentation)</strong></font>
               <br>
               <a href="https://openaccess.thecvf.com/content/CVPR2022W/CVFAD/html/Lee_Towards_Detailed_Characteristic-Preserving_Virtual_Try-On_CVPRW_2022_paper.html">paper</a> /
 	      <a href="https://drive.google.com/file/d/1R1hNksLg4KPYQib6bQ6qix11O7NYVgi2/view?usp=sharing">video</a>
