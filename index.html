@@ -72,6 +72,7 @@
               <heading>News</heading>
               <p>
                 <ul>
+                  <li style="list-style-position:inside;margin:0;padding:0;text-align:left;">10/2023: Paper on pose-conditioned diffusion models was accepted to <a href="https://wacv2024.thecvf.com/">WACV 2024</a> 
                   <li style="list-style-position:inside;margin:0;padding:0;text-align:left;">08/2023: Started my PhD in Computer Science at <a href="https://www.cs.utexas.edu/">UT Austin</a> 
                   <li style="list-style-position:inside;margin:0;padding:0;text-align:left;">06/2023: Presented a paper on <a href="https://sightsound.org/papers/2023/Lee_Disentangled_Audio-Driven_NeRF_Talking_Head_Generation_with_Detailed_Identity-Specific_Micro_expressions.pdf">talking face generation</a> at <a href="https://sightsound.org/">CVPR Workshop 2023</a>
                   <li style="list-style-position:inside;margin:0;padding:0;text-align:left;">09/2022: Two papers on <a href="https://bmvc2022.mpi-inf.mpg.de/272/", target="_blank">virtual try-on</a> and <a href="https://bmvc2022.mpi-inf.mpg.de/302/", target="_blank">efficient NeRFs</a> were accepted to <a href="https://www.bmvc2022.org/", target="_blank">BMVC 2022</a></li>
@@ -95,6 +96,38 @@
         </tbody></table>
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
 
+         <tr onmouseout="posediff_stop()" onmouseover="posediff_start()">
+            <td style="padding:20px;width:25%;vertical-align:middle">  <!-- width="25%" valign="middle" padding="20px"-->
+              <div class="one">
+                <div class="two" id='posediff_image'>
+                  <img src='images/posediff_results.png' width="160"></div>   
+                <img src='images/posediff_pose-conditioning.png' width="160">
+              </div>
+              <script type="text/javascript">
+                function posediff_start() {
+                  document.getElementById('posediff_image').style.opacity = "1";
+                }
+
+                function posediff_stop() {
+                  document.getElementById('posediff_image').style.opacity = "0";
+                }
+                posediff_stop()
+              </script>
+            </td>
+            <td style="padding:20px;width:75%;vertical-align:middle">  <!--width="75%" valign="middle" padding="20px"-->
+              <a href="https://wacv2024.thecvf.com/">
+                <papertitle>PoseDiff: Pose-conditioned Diffusion Model for Unbounded Scene Synthesis from Sparse Inputs</papertitle>
+              </a>
+              <br>
+              <strong>Seoyoung Lee</strong>,
+		    Joonseok Lee
+              <br>
+              <em>WACV</em>, 2024
+              <br>
+	      <a href="https://wacv2024.thecvf.com/">paper</a>
+            </td>
+          </tr>
+		
          <tr onmouseout="dadnerf_stop()" onmouseover="dadnerf_start()">
             <td style="padding:20px;width:25%;vertical-align:middle">  <!-- width="25%" valign="middle" padding="20px"-->
               <div class="one">
