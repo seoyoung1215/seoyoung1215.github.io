@@ -100,6 +100,39 @@
         </tbody></table>
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
 
+         <tr onmouseout="eva_stop()" onmouseover="eva_start()">
+            <td style="padding:20px;width:25%;vertical-align:middle">  <!-- width="25%" valign="middle" padding="20px"-->
+              <div class="one">
+                <div class="two" id='posediff_image'>
+                  <img src='images/eva1.jpg' width="160"></div>   
+                <img src='images/eva2.png' width="160">
+              </div>
+              <script type="text/javascript">
+                function eva_start() {
+                  document.getElementById('posediff_image').style.opacity = "1";
+                }
+
+                function eva_stop() {
+                  document.getElementById('posediff_image').style.opacity = "0";
+                }
+                eva_stop()
+              </script>
+            </td>
+            <td style="padding:20px;width:75%;vertical-align:middle">  <!--width="75%" valign="middle" padding="20px"-->
+              <a href="https://evahuman.github.io/">
+                <papertitle>Expressive Gaussian Human Avatars from Monocular RGB Video</papertitle>
+              </a>
+              <br>
+              Hezhen Hu, Zhiwen Fan, Tianhao Wu, Yihan Xi, Seoyoung Lee, Georgios Pavlakos, Zhangyang Wang
+              <br>
+              <em>NeurIPS</em>, 2024
+              <br>
+	      <a href="https://evahuman.github.io/">project page</a> /
+	      <a href="https://arxiv.org/abs/2407.03204">paper</a> /
+	      <a href="https://github.com/evahuman/EVA">code</a> 
+            </td>
+          </tr>
+
          <tr onmouseout="posediff_stop()" onmouseover="posediff_start()">
             <td style="padding:20px;width:25%;vertical-align:middle">  <!-- width="25%" valign="middle" padding="20px"-->
               <div class="one">
