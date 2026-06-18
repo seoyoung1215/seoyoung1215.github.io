@@ -24,21 +24,6 @@
 			  }
 		  }
 	  }
-	  document.addEventListener('DOMContentLoaded', function () {
-		  document.querySelectorAll('.one[data-hover-src]').forEach(function (container) {
-			  var loaded = false;
-			  function loadHoverImage() {
-				  if (loaded) return;
-				  loaded = true;
-				  var hoverImg = container.querySelector('.pub-img-hover');
-				  if (hoverImg && !hoverImg.src) {
-					  hoverImg.src = container.getAttribute('data-hover-src');
-				  }
-			  }
-			  container.addEventListener('mouseenter', loadHoverImage, { once: true });
-			  container.addEventListener('touchstart', loadHoverImage, { once: true, passive: true });
-		  });
-	  });
   </script>
 </head>
 
@@ -142,9 +127,9 @@
         <!-- PUBLICATIONS START -->
           <tr>
             <td style="padding:20px;width:25%;vertical-align:middle">
-              <div class="one" style="--pub-img-size:160px" data-hover-src="images/deploy2.jpg">
-                <div class="two"><div class="pub-img-viewport"><div class="pub-img-stage"><img class="pub-img pub-img-hover" alt="" width="160" height="160"></div></div></div>
-                <div class="pub-img-viewport pub-img-viewport-base" style="--crop-top-ratio:0;--crop-right-ratio:0.25;--crop-bottom-ratio:0;--crop-left-ratio:0.0125;--shift-x-ratio:0.11875;--shift-y-ratio:0;--scale:1.3559322033898304"><div class="pub-img-stage"><img class="pub-img" src="images/deploy1.jpg" alt="" width="160" height="160" loading="lazy" decoding="async"></div></div>
+              <div class="one" style="--pub-img-size:160px">
+                <div class="two"><div class="pub-img-viewport"><div class="pub-img-stage"><img class="pub-img pub-img-hover" src="images/deploy2.jpg" alt="" width="160" height="160" loading="lazy" decoding="async"></div></div></div>
+                <div class="pub-img-viewport pub-img-viewport-base" style="--crop-top-ratio:0.0;--crop-right-ratio:0.25;--crop-bottom-ratio:0.0;--crop-left-ratio:0.0125;--shift-x-ratio:0.11875;--shift-y-ratio:0.0;--scale:1.3559322033898304"><div class="pub-img-stage"><img class="pub-img" src="images/deploy1.jpg" alt="" width="160" height="160" loading="lazy" decoding="async"></div></div>
               </div>
             </td>
             <td style="padding:20px;width:75%;vertical-align:middle">
@@ -155,8 +140,8 @@
           </tr>
           <tr>
             <td style="padding:20px;width:25%;vertical-align:middle">
-              <div class="one" style="--pub-img-size:160px" data-hover-src="images/cipher2.jpg">
-                <div class="two"><div class="pub-img-viewport" style="--crop-top-ratio:0.125;--crop-right-ratio:0.1375;--crop-bottom-ratio:0.125;--crop-left-ratio:0.175;--shift-x-ratio:-0.01875;--shift-y-ratio:0;--scale:1.4545454545454546"><div class="pub-img-stage"><img class="pub-img pub-img-hover" alt="" width="160" height="160"></div></div></div>
+              <div class="one" style="--pub-img-size:160px">
+                <div class="two"><div class="pub-img-viewport" style="--crop-top-ratio:0.125;--crop-right-ratio:0.1375;--crop-bottom-ratio:0.125;--crop-left-ratio:0.175;--shift-x-ratio:-0.01875;--shift-y-ratio:0.0;--scale:1.4545454545454546"><div class="pub-img-stage"><img class="pub-img pub-img-hover" src="images/cipher2.jpg" alt="" width="160" height="160" loading="lazy" decoding="async"></div></div></div>
                 <div class="pub-img-viewport pub-img-viewport-base"><div class="pub-img-stage"><img class="pub-img" src="images/cipher1.jpg" alt="" width="160" height="160" loading="lazy" decoding="async"></div></div>
               </div>
             </td>
@@ -169,8 +154,8 @@
           </tr>
           <tr>
             <td style="padding:20px;width:25%;vertical-align:middle">
-              <div class="one" style="--pub-img-size:160px" data-hover-src="images/S2H2.jpg">
-                <div class="two"><div class="pub-img-viewport"><div class="pub-img-stage"><img class="pub-img pub-img-hover" alt="" width="160" height="160"></div></div></div>
+              <div class="one" style="--pub-img-size:160px">
+                <div class="two"><div class="pub-img-viewport"><div class="pub-img-stage"><img class="pub-img pub-img-hover" src="images/S2H2.jpg" alt="" width="160" height="160" loading="lazy" decoding="async"></div></div></div>
                 <div class="pub-img-viewport pub-img-viewport-base"><div class="pub-img-stage"><img class="pub-img" src="images/S2H1.jpg" alt="" width="160" height="160" loading="lazy" decoding="async"></div></div>
               </div>
             </td>
@@ -183,8 +168,8 @@
           </tr>
           <tr>
             <td style="padding:20px;width:25%;vertical-align:middle">
-              <div class="one" style="--pub-img-size:160px" data-hover-src="images/eva2.jpg">
-                <div class="two"><div class="pub-img-viewport"><div class="pub-img-stage"><img class="pub-img pub-img-hover" alt="" width="160" height="160"></div></div></div>
+              <div class="one" style="--pub-img-size:160px">
+                <div class="two"><div class="pub-img-viewport"><div class="pub-img-stage"><img class="pub-img pub-img-hover" src="images/eva2.jpg" alt="" width="160" height="160" loading="lazy" decoding="async"></div></div></div>
                 <div class="pub-img-viewport pub-img-viewport-base"><div class="pub-img-stage"><img class="pub-img" src="images/eva1.jpg" alt="" width="160" height="160" loading="lazy" decoding="async"></div></div>
               </div>
             </td>
@@ -197,8 +182,8 @@
           </tr>
           <tr>
             <td style="padding:20px;width:25%;vertical-align:middle">
-              <div class="one" style="--pub-img-size:160px" data-hover-src="images/posediff_results.jpg">
-                <div class="two"><div class="pub-img-viewport"><div class="pub-img-stage"><img class="pub-img pub-img-hover" alt="" width="160" height="160"></div></div></div>
+              <div class="one" style="--pub-img-size:160px">
+                <div class="two"><div class="pub-img-viewport"><div class="pub-img-stage"><img class="pub-img pub-img-hover" src="images/posediff_results.jpg" alt="" width="160" height="160" loading="lazy" decoding="async"></div></div></div>
                 <div class="pub-img-viewport pub-img-viewport-base"><div class="pub-img-stage"><img class="pub-img" src="images/posediff_pose-conditioning.jpg" alt="" width="160" height="160" loading="lazy" decoding="async"></div></div>
               </div>
             </td>
@@ -211,8 +196,8 @@
           </tr>
           <tr>
             <td style="padding:20px;width:25%;vertical-align:middle">
-              <div class="one" style="--pub-img-size:160px" data-hover-src="images/dadnerf_heatmap.jpg">
-                <div class="two"><div class="pub-img-viewport"><div class="pub-img-stage"><img class="pub-img pub-img-hover" alt="" width="160" height="160"></div></div></div>
+              <div class="one" style="--pub-img-size:160px">
+                <div class="two"><div class="pub-img-viewport"><div class="pub-img-stage"><img class="pub-img pub-img-hover" src="images/dadnerf_heatmap.jpg" alt="" width="160" height="160" loading="lazy" decoding="async"></div></div></div>
                 <div class="pub-img-viewport pub-img-viewport-base"><div class="pub-img-stage"><img class="pub-img" src="images/dadnerf_model.jpg" alt="" width="160" height="160" loading="lazy" decoding="async"></div></div>
               </div>
             </td>
@@ -225,8 +210,8 @@
           </tr>
           <tr>
             <td style="padding:20px;width:25%;vertical-align:middle">
-              <div class="one" style="--pub-img-size:160px" data-hover-src="images/learning_to_wear2.jpg">
-                <div class="two"><div class="pub-img-viewport"><div class="pub-img-stage"><img class="pub-img pub-img-hover" alt="" width="160" height="160"></div></div></div>
+              <div class="one" style="--pub-img-size:160px">
+                <div class="two"><div class="pub-img-viewport"><div class="pub-img-stage"><img class="pub-img pub-img-hover" src="images/learning_to_wear2.jpg" alt="" width="160" height="160" loading="lazy" decoding="async"></div></div></div>
                 <div class="pub-img-viewport pub-img-viewport-base"><div class="pub-img-stage"><img class="pub-img" src="images/learning_to_wear1.jpg" alt="" width="160" height="160" loading="lazy" decoding="async"></div></div>
               </div>
             </td>
@@ -239,8 +224,8 @@
           </tr>
           <tr>
             <td style="padding:20px;width:25%;vertical-align:middle">
-              <div class="one" style="--pub-img-size:160px" data-hover-src="images/cfnsg2.jpg">
-                <div class="two"><div class="pub-img-viewport"><div class="pub-img-stage"><img class="pub-img pub-img-hover" alt="" width="160" height="160"></div></div></div>
+              <div class="one" style="--pub-img-size:160px">
+                <div class="two"><div class="pub-img-viewport"><div class="pub-img-stage"><img class="pub-img pub-img-hover" src="images/cfnsg2.jpg" alt="" width="160" height="160" loading="lazy" decoding="async"></div></div></div>
                 <div class="pub-img-viewport pub-img-viewport-base"><div class="pub-img-stage"><img class="pub-img" src="images/cfnsg1.jpg" alt="" width="160" height="160" loading="lazy" decoding="async"></div></div>
               </div>
             </td>
@@ -253,8 +238,8 @@
           </tr>
           <tr>
             <td style="padding:20px;width:25%;vertical-align:middle">
-              <div class="one" style="--pub-img-size:160px" data-hover-src="images/dpvton1.jpg">
-                <div class="two"><div class="pub-img-viewport"><div class="pub-img-stage"><img class="pub-img pub-img-hover" alt="" width="160" height="160"></div></div></div>
+              <div class="one" style="--pub-img-size:160px">
+                <div class="two"><div class="pub-img-viewport"><div class="pub-img-stage"><img class="pub-img pub-img-hover" src="images/dpvton1.jpg" alt="" width="160" height="160" loading="lazy" decoding="async"></div></div></div>
                 <div class="pub-img-viewport pub-img-viewport-base"><div class="pub-img-stage"><img class="pub-img" src="images/dpvton2.jpg" alt="" width="160" height="160" loading="lazy" decoding="async"></div></div>
               </div>
             </td>
@@ -267,8 +252,8 @@
           </tr>
           <tr>
             <td style="padding:20px;width:25%;vertical-align:middle">
-              <div class="one" style="--pub-img-size:160px" data-hover-src="images/meta_analysis_scatterplot.jpg">
-                <div class="two"><div class="pub-img-viewport"><div class="pub-img-stage"><img class="pub-img pub-img-hover" alt="" width="160" height="160"></div></div></div>
+              <div class="one" style="--pub-img-size:160px">
+                <div class="two"><div class="pub-img-viewport"><div class="pub-img-stage"><img class="pub-img pub-img-hover" src="images/meta_analysis_scatterplot.jpg" alt="" width="160" height="160" loading="lazy" decoding="async"></div></div></div>
                 <div class="pub-img-viewport pub-img-viewport-base"><div class="pub-img-stage"><img class="pub-img" src="images/meta_analysis_forest_plot.jpg" alt="" width="160" height="160" loading="lazy" decoding="async"></div></div>
               </div>
             </td>

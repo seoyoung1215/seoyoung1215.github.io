@@ -1,12 +1,22 @@
-This is the source code to Seoyoung Lee's public academic website: https://seoyoung1215.github.io/.
+Source code for https://seoyoung1215.github.io/
+
+## What to edit
+
+| Section | File | Notes |
+|---|---|---|
+| Research / publications | `publications.json` | Run `python3 build.py` after editing, then commit both `publications.json` and `index.html`. Do not edit the Research rows in `index.html` by hand. |
+| Intro, News, everything else | `index.html` | Edit directly. |
 
 ## Adding a publication
 
-1. Edit `publications.js` (add a paper object to the array)
-2. Run `node build.js` to update `index.html`
+1. Edit `publications.json`
+2. Run `python3 build.py`
 3. Commit and push
 
-For new images:
+Optional fields: `imgCrop`, `imgCropHover`, `imgZoom`, `imgZoomHover`, `imgSize`, `award`
+
+Use `.jpg` paths in `publications.json` when possible (~480px wide is enough for the 160px thumbnails). If you only have a PNG:
+
 ```bash
 sips -Z 480 images/foo.png --out images/foo.jpg --setProperty format jpeg --setProperty formatOptions 85
 ```
