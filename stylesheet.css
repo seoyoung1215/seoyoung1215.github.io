@@ -232,6 +232,19 @@ span.highlight {
   margin-top: 10px;
 }
 
+.news-scroll ul {
+  list-style: disc;
+  list-style-position: outside;
+  margin: 0;
+  padding-left: 1.25em;
+}
+
+.news-scroll li {
+  margin: 0 0 0.15em 0;
+  padding-left: 0.25em;
+  text-align: left;
+}
+
 .research-works td {
   /* ← change first number to adjust spacing between all papers */
   padding: 5px 20px !important;
