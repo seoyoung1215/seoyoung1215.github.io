@@ -383,8 +383,14 @@ span.highlight {
   margin: 0 auto;
 }
 
-/* Mobile layout — applies when screen width is 600px or less */
-@media (max-width: 600px) {
+/* Mobile layout — phones & small tablets (iPhone, Galaxy, etc.) */
+@media (max-width: 768px) {
+  /* One horizontal inset for the whole page; safe-area helps notched iPhones */
+  body {
+    padding-left: max(26px, env(safe-area-inset-left, 0px));
+    padding-right: max(26px, env(safe-area-inset-right, 0px));
+  }
+
   .intro-row {
     display: flex;
     flex-direction: column;
@@ -410,8 +416,7 @@ span.highlight {
     order: 1;
     width: 100% !important;
     max-width: 100% !important;
-    /* padding: top | left & right | bottom */
-    padding: 2.5% 16px 1% !important;
+    padding: 2.5% 0 1% 0 !important; /* left/right margin comes from body padding above */
   }
 
   .intro-row .intro-photo img {
@@ -419,6 +424,11 @@ span.highlight {
     max-width: min(60%, var(--intro-photo-max)) !important;
     width: auto !important;
     margin: 0;
+  }
+
+  td:has(.news-scroll) {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
   }
 
   .social-links a + a::before {
@@ -446,8 +456,8 @@ span.highlight {
 
   .research-heading td,
   .affiliation-logos-section {
-    padding-left: 16px !important;
-    padding-right: 16px !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
   }
 
   p[style*="float:right"] {
