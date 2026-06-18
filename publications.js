@@ -218,7 +218,7 @@ function renderPublications() {
   const tbody = document.getElementById('publications-tbody');
   if (!tbody) return;
 
-  tbody.innerHTML = publications.map(function (paper) {
+  tbody.innerHTML = publications.map(function (paper, index) {
     const linksHtml = paper.links.map(function (link) {
       return '<a href="' + link.url + '">' + link.label + '</a>';
     }).join(' / ');
@@ -228,13 +228,14 @@ function renderPublications() {
     const containerStyle = getPublicationContainerStyle(paper);
     const baseCropStyle = getViewportStyle(paper.imgCrop, paper.imgZoom, imgSize);
     const hoverCropStyle = getViewportStyle(paper.imgCropHover, paper.imgZoomHover, imgSize);
+    const lazyAttr = index < 2 ? '' : ' loading="lazy" decoding="async"';
 
     return (
       '<tr>' +
         '<td style="padding:20px;width:25%;vertical-align:middle">' +
-          '<div class="one"' + containerStyle + '>' +
-            '<div class="two"><div class="pub-img-viewport"' + hoverCropStyle + '><div class="pub-img-stage"><img class="pub-img" src="' + paper.imgHover + '" alt=""></div></div></div>' +
-            '<div class="pub-img-viewport pub-img-viewport-base"' + baseCropStyle + '><div class="pub-img-stage"><img class="pub-img" src="' + paper.img + '" alt=""></div></div>' +
+          '<div class="one"' + containerStyle + ' data-hover-src="' + paper.imgHover + '">' +
+            '<div class="two"><div class="pub-img-viewport"' + hoverCropStyle + '><div class="pub-img-stage"><img class="pub-img pub-img-hover" alt="" width="' + imgSize + '" height="' + imgSize + '"></div></div></div>' +
+            '<div class="pub-img-viewport pub-img-viewport-base"' + baseCropStyle + '><div class="pub-img-stage"><img class="pub-img" src="' + paper.img + '" alt="" width="' + imgSize + '" height="' + imgSize + '"' + lazyAttr + '></div></div>' +
           '</div>' +
         '</td>' +
         '<td style="padding:20px;width:75%;vertical-align:middle">' +
@@ -246,6 +247,24 @@ function renderPublications() {
       '</tr>'
     );
   }).join('');
+
+  tbody.querySelectorAll('.one[data-hover-src]').forEach(function (container) {
+    var loaded = false;
+    function loadHoverImage() {
+      if (loaded) return;
+      loaded = true;
+      var hoverImg = container.querySelector('.pub-img-hover');
+      if (hoverImg && !hoverImg.src) {
+        hoverImg.src = container.getAttribute('data-hover-src');
+      }
+    }
+    container.addEventListener('mouseenter', loadHoverImage, { once: true });
+    container.addEventListener('touchstart', loadHoverImage, { once: true, passive: true });
+  });
 }
 
-document.addEventListener('DOMContentLoaded', renderPublications);
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', renderPublications);
+} else {
+  renderPublications();
+}
