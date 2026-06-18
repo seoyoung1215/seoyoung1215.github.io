@@ -360,7 +360,7 @@ span.highlight {
   /* ← raise bio % to give intro text more width (lower photo % below) */
   width: 65% !important;
   max-width: 65% !important;
-  padding-bottom: 1% !important;
+  padding: 2.5% 0.5% 1% 4.5% !important; /* last value = left inset; raise to shift text right */
   vertical-align: top !important;
 }
 
@@ -383,6 +383,7 @@ span.highlight {
   margin: 0 auto;
 }
 
+/* Mobile layout — applies when screen width is 600px or less */
 @media (max-width: 600px) {
   .intro-row {
     display: flex;
@@ -409,6 +410,8 @@ span.highlight {
     order: 1;
     width: 100% !important;
     max-width: 100% !important;
+    /* padding: top | left & right | bottom */
+    padding: 2.5% 16px 1% !important;
   }
 
   .intro-row .intro-photo img {
