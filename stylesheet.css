@@ -383,8 +383,8 @@ span.highlight {
   margin: 0 auto;
 }
 
-/* Mobile layout — phones & small tablets (iPhone, Galaxy, etc.) */
-@media (max-width: 768px) {
+/* Mobile layout — phones (600px or less; iPhone, Galaxy, etc.) */
+@media (max-width: 600px) {
   /* One horizontal inset for the whole page; safe-area helps notched iPhones */
   body {
     padding-left: max(23px, env(safe-area-inset-left, 0px));
