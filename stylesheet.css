@@ -106,18 +106,83 @@ name {
 }
 
 .one {
-  width: 160px;
-  height: 160px;
+  --pub-img-size: 160px;
+  width: var(--pub-img-size);
+  height: var(--pub-img-size);
   position: relative;
+  overflow: hidden;
 }
 
 .two {
-  width: 160px;
-  height: 160px;
+  width: var(--pub-img-size);
+  height: var(--pub-img-size);
   position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  overflow: hidden;
+  background: #fff;
+  opacity: 0;
   transition: opacity .2s ease-in-out;
   -moz-transition: opacity .2s ease-in-out;
   -webkit-transition: opacity .2s ease-in-out;
+}
+
+.one:hover .two {
+  opacity: 1;
+}
+
+.one:hover .pub-img-viewport-base {
+  opacity: 0;
+}
+
+.pub-img-viewport-base {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  transition: opacity .2s ease-in-out;
+  -moz-transition: opacity .2s ease-in-out;
+  -webkit-transition: opacity .2s ease-in-out;
+}
+
+.two .pub-img-viewport {
+  width: 100%;
+  height: 100%;
+}
+
+.pub-img-viewport {
+  --crop-top: 0px;
+  --crop-right: 0px;
+  --crop-bottom: 0px;
+  --crop-left: 0px;
+  --shift-x: 0px;
+  --shift-y: 0px;
+  --scale: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--pub-img-size);
+  height: var(--pub-img-size);
+  overflow: hidden;
+  position: relative;
+}
+
+.pub-img-stage {
+  width: var(--pub-img-size);
+  height: var(--pub-img-size);
+  flex-shrink: 0;
+}
+
+.pub-img-viewport .pub-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+  clip-path: inset(var(--crop-top) var(--crop-right) var(--crop-bottom) var(--crop-left));
+  transform-origin: center center;
+  transform: scale(var(--scale)) translate(var(--shift-x), var(--shift-y));
 }
 
 .fade {
@@ -128,4 +193,160 @@ name {
 
 span.highlight {
   background-color: #ffffd0;
+}
+
+.news-scroll {
+  max-height: 220px;
+  overflow-y: auto;
+  margin-top: 10px;
+}
+
+.research-works td {
+  /* ← change first number to adjust spacing between all papers */
+  padding: 5px 20px !important;
+}
+
+.research-heading td {
+  padding: 20px 20px 0 !important;
+}
+
+.research-works tr:first-child td {
+  padding-top: 8px !important;
+}
+
+.affiliation-logos {
+  /* ← change these to resize all logos */
+  --logo-h-min: 50px;   /* smallest on narrow screens */
+  --logo-h-max: 70px;   /* biggest on wide screens */
+  --logo-w-min: 72px;
+  --logo-w-max: 140px;
+  --adobe-scale: 0.70;  /* Adobe = 70% of the others */
+  --nvidia-scale: 1.07;  /* NVIDIA = 107% of the others */
+  --ut-scale: 0.95;       /* UT Austin = 95% of the default */
+  --snu-scale: 0.82;    /* SNU = 82% of the others */
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: clamp(0px, 0vw, 36px);
+  margin: 16px 0 4px;
+  padding: 0 clamp(8px, 2vw, 20px);
+}
+
+.affiliation-logos a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: clamp(var(--logo-h-min), 8vw, var(--logo-h-max));
+  width: clamp(var(--logo-w-min), 16vw, var(--logo-w-max));
+  flex-shrink: 1;
+  line-height: 0;
+}
+
+.affiliation-logos img {
+  height: clamp(var(--logo-h-min), 8vw, var(--logo-h-max));
+  width: auto;
+  max-width: clamp(var(--logo-w-min), 16vw, var(--logo-w-max));
+  object-fit: contain;
+  vertical-align: middle;
+  opacity: 0.85;
+  transition: opacity .2s ease-in-out;
+}
+
+.affiliation-logos img.logo-adobe {
+  height: clamp(calc(var(--logo-h-min) * var(--adobe-scale)), 5.5vw, calc(var(--logo-h-max) * var(--adobe-scale)));
+  max-width: clamp(calc(var(--logo-w-min) * var(--adobe-scale)), 10vw, calc(var(--logo-w-max) * var(--adobe-scale)));
+}
+
+.affiliation-logos img.logo-nvidia {
+  height: clamp(calc(var(--logo-h-min) * var(--nvidia-scale)), 5.5vw, calc(var(--logo-h-max) * var(--nvidia-scale)));
+  max-width: clamp(calc(var(--logo-w-min) * var(--nvidia-scale)), 10vw, calc(var(--logo-w-max) * var(--nvidia-scale)));
+}
+
+.affiliation-logos img.logo-ut {
+  height: clamp(calc(var(--logo-h-min) * var(--ut-scale)), 5.5vw, calc(var(--logo-h-max) * var(--ut-scale)));
+  max-width: clamp(calc(var(--logo-w-min) * var(--ut-scale)), 10vw, calc(var(--logo-w-max) * var(--ut-scale)));
+}
+
+.affiliation-logos img.logo-snu {
+  height: clamp(calc(var(--logo-h-min) * var(--snu-scale)), 5.5vw, calc(var(--logo-h-max) * var(--snu-scale)));
+  max-width: clamp(calc(var(--logo-w-min) * var(--snu-scale)), 10vw, calc(var(--logo-w-max) * var(--snu-scale)));
+}
+
+.affiliation-logos a:hover img {
+  opacity: 1;
+}
+
+.social-links {
+  text-align: center;
+  margin: 4px 0 2px;
+}
+
+.social-links a {
+  display: inline-block;
+  margin: 4px 0;
+  white-space: nowrap;
+}
+
+.social-links a + a::before {
+  content: "|";
+  margin: 0 12px;
+  color: #b0b0b0;
+  font-weight: 300;
+}
+
+.social-links a i {
+  margin-right: 5px;
+  font-size: 17px;
+  vertical-align: -1px;
+}
+
+.social-links a .ai {
+  font-size: 18px;
+}
+
+.intro-pronunciation {
+  margin-bottom: 0;
+}
+
+.intro-bio {
+  padding-bottom: 1% !important;
+  vertical-align: top !important;
+}
+
+.intro-row .intro-photo {
+  vertical-align: middle !important;
+}
+
+@media (max-width: 600px) {
+  .intro-row {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .intro-row td {
+    display: block;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .intro-photo {
+    order: -1;
+    padding-bottom: 0 !important;
+  }
+
+  .intro-bio {
+    order: 1;
+  }
+
+  .intro-photo img {
+    max-width: 220px !important;
+    width: 60% !important;
+    margin: 0 auto;
+  }
+
+  .social-links a + a::before {
+    margin: 0 8px;
+  }
 }
