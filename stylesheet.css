@@ -236,12 +236,13 @@ span.highlight {
   list-style: disc;
   list-style-position: outside;
   margin: 0;
-  padding-left: 1.25em;
+  padding-left: 2.1em;
+  padding-right: 2.1em;
 }
 
 .news-scroll li {
-  margin: 0 0 0.15em 0;
-  padding-left: 0.25em;
+  margin: 0 0 0.07em 0;
+  padding-left: 0;
   text-align: left;
 }
 
