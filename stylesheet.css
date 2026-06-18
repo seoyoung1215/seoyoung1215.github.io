@@ -177,12 +177,18 @@ name {
 }
 
 .pub-img-viewport {
-  --crop-top: 0px;
-  --crop-right: 0px;
-  --crop-bottom: 0px;
-  --crop-left: 0px;
-  --shift-x: 0px;
-  --shift-y: 0px;
+  --crop-top-ratio: 0;
+  --crop-right-ratio: 0;
+  --crop-bottom-ratio: 0;
+  --crop-left-ratio: 0;
+  --shift-x-ratio: 0;
+  --shift-y-ratio: 0;
+  --crop-top: calc(var(--pub-img-size) * var(--crop-top-ratio));
+  --crop-right: calc(var(--pub-img-size) * var(--crop-right-ratio));
+  --crop-bottom: calc(var(--pub-img-size) * var(--crop-bottom-ratio));
+  --crop-left: calc(var(--pub-img-size) * var(--crop-left-ratio));
+  --shift-x: calc(var(--pub-img-size) * var(--shift-x-ratio));
+  --shift-y: calc(var(--pub-img-size) * var(--shift-y-ratio));
   --scale: 1;
   display: flex;
   align-items: center;

@@ -8,7 +8,6 @@
 	<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌐</text></svg>">
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.0/css/academicons.min.css" integrity="sha512-W4yqoT1+8NLkinBLBZko+dFB2ZbHsYLDdr50VElllRcNt2Q4/GSs6u71UHKxB7S6JEMCp5Ve4xjh3eGQl/HRvg==" crossorigin="anonymous">
-  <script src="publications.js" defer></script>
   <script type="text/javascript"> 
 	  function play(audio_id){
 		  var audio = document.getElementById(audio_id);
@@ -25,6 +24,21 @@
 			  }
 		  }
 	  }
+	  document.addEventListener('DOMContentLoaded', function () {
+		  document.querySelectorAll('.one[data-hover-src]').forEach(function (container) {
+			  var loaded = false;
+			  function loadHoverImage() {
+				  if (loaded) return;
+				  loaded = true;
+				  var hoverImg = container.querySelector('.pub-img-hover');
+				  if (hoverImg && !hoverImg.src) {
+					  hoverImg.src = container.getAttribute('data-hover-src');
+				  }
+			  }
+			  container.addEventListener('mouseenter', loadHoverImage, { once: true });
+			  container.addEventListener('touchstart', loadHoverImage, { once: true, passive: true });
+		  });
+	  });
   </script>
 </head>
 
@@ -124,7 +138,148 @@
           </tr>
 		
         </tbody></table>
-        <table class="research-works" style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody id="publications-tbody">
+        <table class="research-works" style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+        <!-- PUBLICATIONS START -->
+          <tr>
+            <td style="padding:20px;width:25%;vertical-align:middle">
+              <div class="one" style="--pub-img-size:160px" data-hover-src="images/deploy2.jpg">
+                <div class="two"><div class="pub-img-viewport"><div class="pub-img-stage"><img class="pub-img pub-img-hover" alt="" width="160" height="160"></div></div></div>
+                <div class="pub-img-viewport pub-img-viewport-base" style="--crop-top-ratio:0;--crop-right-ratio:0.25;--crop-bottom-ratio:0;--crop-left-ratio:0.0125;--shift-x-ratio:0.11875;--shift-y-ratio:0;--scale:1.3559322033898304"><div class="pub-img-stage"><img class="pub-img" src="images/deploy1.jpg" alt="" width="160" height="160" loading="lazy" decoding="async"></div></div>
+              </div>
+            </td>
+            <td style="padding:20px;width:75%;vertical-align:middle">
+              <a href="title link url"><papertitle>Seeing Where to Deploy: Metric RGB-Based Traversability Analysis for Aerial-to-Ground Hidden Space Inspection</papertitle></a><br>
+              <strong>Seoyoung Lee</strong>, Shaekh Mohammad Shithil, Durgakant Pushp, Lantao Liu, Zhangyang Wang<br>
+              <em>IROS</em>, 2026<br>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:20px;width:25%;vertical-align:middle">
+              <div class="one" style="--pub-img-size:160px" data-hover-src="images/cipher2.jpg">
+                <div class="two"><div class="pub-img-viewport" style="--crop-top-ratio:0.125;--crop-right-ratio:0.1375;--crop-bottom-ratio:0.125;--crop-left-ratio:0.175;--shift-x-ratio:-0.01875;--shift-y-ratio:0;--scale:1.4545454545454546"><div class="pub-img-stage"><img class="pub-img pub-img-hover" alt="" width="160" height="160"></div></div></div>
+                <div class="pub-img-viewport pub-img-viewport-base"><div class="pub-img-stage"><img class="pub-img" src="images/cipher1.jpg" alt="" width="160" height="160" loading="lazy" decoding="async"></div></div>
+              </div>
+            </td>
+            <td style="padding:20px;width:75%;vertical-align:middle">
+              <a href="https://arxiv.org/abs/2603.14150"><papertitle>CIPHER: Culvert Inspection through Pairwise Frame Selection and High-Efficiency Reconstruction</papertitle></a><br>
+              <strong>Seoyoung Lee</strong>, Zhangyang Wang<br>
+              <em>ICCVW E2E3D</em>, 2025<br>
+              <a href="https://arxiv.org/abs/2603.14150">paper</a>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:20px;width:25%;vertical-align:middle">
+              <div class="one" style="--pub-img-size:160px" data-hover-src="images/S2H2.jpg">
+                <div class="two"><div class="pub-img-viewport"><div class="pub-img-stage"><img class="pub-img pub-img-hover" alt="" width="160" height="160"></div></div></div>
+                <div class="pub-img-viewport pub-img-viewport-base"><div class="pub-img-stage"><img class="pub-img" src="images/S2H1.jpg" alt="" width="160" height="160" loading="lazy" decoding="async"></div></div>
+              </div>
+            </td>
+            <td style="padding:20px;width:75%;vertical-align:middle">
+              <a href="http://www.joonseok.net/papers/ismir25_s2h.pdf"><papertitle>Joint Object Detection and Sound Source Separation</papertitle></a><br>
+              Sunyoo Kim, Yunjeong Choi, Doyeon Lee, <strong>Seoyoung Lee</strong>, Eunyi Lyoo, Seungju Kim, Junhyug Noh, Joonseok Lee<br>
+              <em>ISMIR</em>, 2025<br>
+              <a href="http://www.joonseok.net/papers/ismir25_s2h.pdf">paper</a>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:20px;width:25%;vertical-align:middle">
+              <div class="one" style="--pub-img-size:160px" data-hover-src="images/eva2.jpg">
+                <div class="two"><div class="pub-img-viewport"><div class="pub-img-stage"><img class="pub-img pub-img-hover" alt="" width="160" height="160"></div></div></div>
+                <div class="pub-img-viewport pub-img-viewport-base"><div class="pub-img-stage"><img class="pub-img" src="images/eva1.jpg" alt="" width="160" height="160" loading="lazy" decoding="async"></div></div>
+              </div>
+            </td>
+            <td style="padding:20px;width:75%;vertical-align:middle">
+              <a href="https://evahuman.github.io/"><papertitle>Expressive Gaussian Human Avatars from Monocular RGB Video</papertitle></a><br>
+              Hezhen Hu, Zhiwen Fan, Tianhao Wu, Yihan Xi, Seoyoung Lee, Georgios Pavlakos, Zhangyang Wang<br>
+              <em>NeurIPS</em>, 2024<br>
+              <a href="https://evahuman.github.io/">project page</a> / <a href="https://arxiv.org/abs/2407.03204">paper</a> / <a href="https://github.com/evahuman/EVA">code</a>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:20px;width:25%;vertical-align:middle">
+              <div class="one" style="--pub-img-size:160px" data-hover-src="images/posediff_results.jpg">
+                <div class="two"><div class="pub-img-viewport"><div class="pub-img-stage"><img class="pub-img pub-img-hover" alt="" width="160" height="160"></div></div></div>
+                <div class="pub-img-viewport pub-img-viewport-base"><div class="pub-img-stage"><img class="pub-img" src="images/posediff_pose-conditioning.jpg" alt="" width="160" height="160" loading="lazy" decoding="async"></div></div>
+              </div>
+            </td>
+            <td style="padding:20px;width:75%;vertical-align:middle">
+              <a href="https://openaccess.thecvf.com/content/WACV2024/papers/Lee_PoseDiff_Pose-Conditioned_Multimodal_Diffusion_Model_for_Unbounded_Scene_Synthesis_From_WACV_2024_paper.pdf"><papertitle>PoseDiff: Pose-conditioned Diffusion Model for Unbounded Scene Synthesis from Sparse Inputs</papertitle></a><br>
+              <strong>Seoyoung Lee</strong>, Joonseok Lee<br>
+              <em>WACV</em>, 2024<br>
+              <a href="https://openaccess.thecvf.com/content/WACV2024/papers/Lee_PoseDiff_Pose-Conditioned_Multimodal_Diffusion_Model_for_Unbounded_Scene_Synthesis_From_WACV_2024_paper.pdf">paper</a>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:20px;width:25%;vertical-align:middle">
+              <div class="one" style="--pub-img-size:160px" data-hover-src="images/dadnerf_heatmap.jpg">
+                <div class="two"><div class="pub-img-viewport"><div class="pub-img-stage"><img class="pub-img pub-img-hover" alt="" width="160" height="160"></div></div></div>
+                <div class="pub-img-viewport pub-img-viewport-base"><div class="pub-img-stage"><img class="pub-img" src="images/dadnerf_model.jpg" alt="" width="160" height="160" loading="lazy" decoding="async"></div></div>
+              </div>
+            </td>
+            <td style="padding:20px;width:75%;vertical-align:middle">
+              <a href="https://sightsound.org/"><papertitle>Disentangled Audio-Driven NeRF: Talking Head Generation with Detailed Identity-Specific Micro expressions</papertitle></a><br>
+              <strong>Seoyoung Lee*</strong>, Seongsu Ha*, Joonseok Lee<br>
+              <em>CVPR Workshops: Sight and Sound</em>, 2023<br>
+              <a href="https://sightsound.org/">paper</a>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:20px;width:25%;vertical-align:middle">
+              <div class="one" style="--pub-img-size:160px" data-hover-src="images/learning_to_wear2.jpg">
+                <div class="two"><div class="pub-img-viewport"><div class="pub-img-stage"><img class="pub-img pub-img-hover" alt="" width="160" height="160"></div></div></div>
+                <div class="pub-img-viewport pub-img-viewport-base"><div class="pub-img-stage"><img class="pub-img" src="images/learning_to_wear1.jpg" alt="" width="160" height="160" loading="lazy" decoding="async"></div></div>
+              </div>
+            </td>
+            <td style="padding:20px;width:75%;vertical-align:middle">
+              <a href="https://www.bmvc2022.org/programme/papers/#:~:text=272.%20Learning%20to,Seoul%20National%20University)*"><papertitle>Learning to Wear: Details-Preserved Virtual Try-on via Disentangling Clothes and Wearer</papertitle></a><br>
+              Sangho Lee, <strong>Seoyoung Lee</strong>, Joonseok Lee<br>
+              <em>BMVC</em>, 2022<br>
+              <a href="https://bmvc2022.mpi-inf.mpg.de/272/">project page</a> / <a href="https://bmvc2022.mpi-inf.mpg.de/0272.pdf">paper</a>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:20px;width:25%;vertical-align:middle">
+              <div class="one" style="--pub-img-size:160px" data-hover-src="images/cfnsg2.jpg">
+                <div class="two"><div class="pub-img-viewport"><div class="pub-img-stage"><img class="pub-img pub-img-hover" alt="" width="160" height="160"></div></div></div>
+                <div class="pub-img-viewport pub-img-viewport-base"><div class="pub-img-stage"><img class="pub-img" src="images/cfnsg1.jpg" alt="" width="160" height="160" loading="lazy" decoding="async"></div></div>
+              </div>
+            </td>
+            <td style="padding:20px;width:75%;vertical-align:middle">
+              <a href="https://www.bmvc2022.org/programme/papers/#:~:text=302.%20Towards%20Efficient%20Neural,Research%20%26%20Seoul%20National%20University)"><papertitle>Towards Efficient Neural Scene Graphs by Learning Consistency Fields</papertitle></a><br>
+              Yeji Song, Chaerin Kong, <strong>Seoyoung Lee</strong>, Nojun Kwak, Joonseok Lee<br>
+              <em>BMVC</em>, 2022<br>
+              <a href="https://bmvc2022.mpi-inf.mpg.de/302/">project page</a> / <a href="https://bmvc2022.mpi-inf.mpg.de/0302.pdf">paper</a> / <a href="https://github.com/ldynx/CF-NSG">code</a>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:20px;width:25%;vertical-align:middle">
+              <div class="one" style="--pub-img-size:160px" data-hover-src="images/dpvton1.jpg">
+                <div class="two"><div class="pub-img-viewport"><div class="pub-img-stage"><img class="pub-img pub-img-hover" alt="" width="160" height="160"></div></div></div>
+                <div class="pub-img-viewport pub-img-viewport-base"><div class="pub-img-stage"><img class="pub-img" src="images/dpvton2.jpg" alt="" width="160" height="160" loading="lazy" decoding="async"></div></div>
+              </div>
+            </td>
+            <td style="padding:20px;width:75%;vertical-align:middle">
+              <a href="https://openaccess.thecvf.com/content/CVPR2022W/CVFAD/html/Lee_Towards_Detailed_Characteristic-Preserving_Virtual_Try-On_CVPRW_2022_paper.html"><papertitle>Towards Detailed Characteristic-Preserving Virtual Try-On</papertitle></a><br>
+              Sangho Lee*, <strong>Seoyoung Lee*</strong>, Joonseok Lee<br>
+              <em>CVPR Workshops: The 5th Workshop on Computer Vision for Fashion, Art, and Design</em>, 2022 &nbsp; <font color=#FF8080><strong>(Oral Presentation)</strong></font><br>
+              <a href="https://openaccess.thecvf.com/content/CVPR2022W/CVFAD/html/Lee_Towards_Detailed_Characteristic-Preserving_Virtual_Try-On_CVPRW_2022_paper.html">paper</a> / <a href="https://drive.google.com/file/d/1R1hNksLg4KPYQib6bQ6qix11O7NYVgi2/view?usp=sharing">video</a>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:20px;width:25%;vertical-align:middle">
+              <div class="one" style="--pub-img-size:160px" data-hover-src="images/meta_analysis_scatterplot.jpg">
+                <div class="two"><div class="pub-img-viewport"><div class="pub-img-stage"><img class="pub-img pub-img-hover" alt="" width="160" height="160"></div></div></div>
+                <div class="pub-img-viewport pub-img-viewport-base"><div class="pub-img-stage"><img class="pub-img" src="images/meta_analysis_forest_plot.jpg" alt="" width="160" height="160" loading="lazy" decoding="async"></div></div>
+              </div>
+            </td>
+            <td style="padding:20px;width:75%;vertical-align:middle">
+              <a href="https://www.mdpi.com/2072-6643/14/6/1170"><papertitle>Meta-Analysis of Randomized Clinical Trials Evaluating Effectiveness of a Multivitamin Supplementation against Oxidative Stress in Healthy Subjects</papertitle></a><br>
+              <strong>Seoyoung Lee*</strong>, Iksoo Huh*, Seunghee Kang, Yea-eun Nam, Youngseo Cho, Md Kamruzzaman, Jina Hong, Oran Kwon, Taesung Park<br>
+              <em>Nutrients</em>, 2022 &nbsp; <font color=#FF8080><strong>(Issue Cover)</strong></font><br>
+              <a href="https://www.mdpi.com/2072-6643/14/6/1170">paper</a>
+            </td>
+          </tr>
+        <!-- PUBLICATIONS END -->
         </tbody></table>
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
           <tr>
