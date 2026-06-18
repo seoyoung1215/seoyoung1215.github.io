@@ -1,10 +1,18 @@
 // Add a new paper by copying a block below and filling in the fields.
+// Thumbnails are auto-used from images/thumbs/ (320px JPEG). After adding images/foo.png, run:
+//   sips -Z 320 images/foo.png --out images/thumbs/foo.jpg --setProperty format jpeg --setProperty formatOptions 80
 // Default thumbnail size (px). Override per paper with imgSize: 140.
 // Optional per-side crop (px or %). Trims only the sides you set, re-centers, then zooms to fill:
 //   imgCrop: { top: 0, right: 40, bottom: 0, left: 0 }        — base image only
 //   imgCropHover: { top: 10, right: 0, bottom: 5, left: 0 }  — hover image only
 // Optional extra uniform zoom: imgZoom: 1.1, imgZoomHover: 1.1
 const publicationImageSize = 160;
+const publicationThumbDir = 'images/thumbs';
+
+function thumbPath(imgPath) {
+  var base = imgPath.replace(/^images\//, '').replace(/\.[^.]+$/, '');
+  return publicationThumbDir + '/' + base + '.jpg';
+}
 
 const publications = [
   // {
@@ -229,13 +237,15 @@ function renderPublications() {
     const baseCropStyle = getViewportStyle(paper.imgCrop, paper.imgZoom, imgSize);
     const hoverCropStyle = getViewportStyle(paper.imgCropHover, paper.imgZoomHover, imgSize);
     const lazyAttr = index < 2 ? '' : ' loading="lazy" decoding="async"';
+    const imgSrc = thumbPath(paper.img);
+    const hoverSrc = thumbPath(paper.imgHover);
 
     return (
       '<tr>' +
         '<td style="padding:20px;width:25%;vertical-align:middle">' +
-          '<div class="one"' + containerStyle + ' data-hover-src="' + paper.imgHover + '">' +
+          '<div class="one"' + containerStyle + ' data-hover-src="' + hoverSrc + '">' +
             '<div class="two"><div class="pub-img-viewport"' + hoverCropStyle + '><div class="pub-img-stage"><img class="pub-img pub-img-hover" alt="" width="' + imgSize + '" height="' + imgSize + '"></div></div></div>' +
-            '<div class="pub-img-viewport pub-img-viewport-base"' + baseCropStyle + '><div class="pub-img-stage"><img class="pub-img" src="' + paper.img + '" alt="" width="' + imgSize + '" height="' + imgSize + '"' + lazyAttr + '></div></div>' +
+            '<div class="pub-img-viewport pub-img-viewport-base"' + baseCropStyle + '><div class="pub-img-stage"><img class="pub-img" src="' + imgSrc + '" alt="" width="' + imgSize + '" height="' + imgSize + '"' + lazyAttr + '></div></div>' +
           '</div>' +
         '</td>' +
         '<td style="padding:20px;width:75%;vertical-align:middle">' +
