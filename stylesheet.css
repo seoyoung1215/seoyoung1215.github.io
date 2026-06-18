@@ -387,8 +387,8 @@ span.highlight {
 @media (max-width: 768px) {
   /* One horizontal inset for the whole page; safe-area helps notched iPhones */
   body {
-    padding-left: max(26px, env(safe-area-inset-left, 0px));
-    padding-right: max(26px, env(safe-area-inset-right, 0px));
+    padding-left: max(23px, env(safe-area-inset-left, 0px));
+    padding-right: max(23px, env(safe-area-inset-right, 0px));
   }
 
   .intro-row {
