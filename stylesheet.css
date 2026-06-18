@@ -432,7 +432,7 @@ span.highlight {
   }
 
   .social-links a + a::before {
-    margin: 0 8px;
+    margin: 0 6px;
   }
 
   .social-links a {
