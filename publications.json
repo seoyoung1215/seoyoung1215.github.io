@@ -4,11 +4,13 @@
     "imgHover": "images/deploy2.jpg",
     "imgCrop": { "top": 0, "right": 40, "bottom": 0, "left": 2 },
     "title": "Seeing Where to Deploy: Metric RGB-Based Traversability Analysis for Aerial-to-Ground Hidden Space Inspection",
-    "titleLink": "title link url",
+    "titleLink": "https://seoyoung1215.github.io/seeing-where-to-deploy/",
     "authors": "<strong>Seoyoung Lee</strong>, Shaekh Mohammad Shithil, Durgakant Pushp, Lantao Liu, Zhangyang Wang",
     "venue": "IROS",
     "year": "2026",
-    "links": []
+    "links": [
+      { "label": "project page", "url": "https://seoyoung1215.github.io/seeing-where-to-deploy/" }
+    ]
   },
   {
     "img": "images/cipher1.jpg",
