@@ -9,7 +9,9 @@
     "venue": "IROS",
     "year": "2026",
     "links": [
-      { "label": "project page", "url": "https://seoyoung1215.github.io/seeing-where-to-deploy/" }
+      { "label": "project page", "url": "https://seoyoung1215.github.io/seeing-where-to-deploy/" },
+      { "label": "paper", "url": "https://arxiv.org/abs/2603.14639" },
+      { "label": "video", "url": "https://seoyoung1215.github.io/seeing-where-to-deploy/static/videos/iros26-overview-1080p.mp4" }
     ]
   },
   {
