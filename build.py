@@ -80,17 +80,36 @@ def render_publications_html(publications: list) -> str:
             paper.get("imgCropHover"), paper.get("imgZoomHover"), img_size
         )
 
+        # With `video`, the clip is the resting thumbnail and `img` becomes the hover still.
+        if paper.get("video"):
+            base_media = (
+                f'<video class="pub-img pub-video" src="{paper["video"]}" '
+                f'poster="{paper.get("videoPoster", paper["img"])}" '
+                f'width="{img_size}" height="{img_size}" '
+                'muted loop playsinline preload="none"></video>'
+            )
+            hover_src = paper.get("imgHover", paper["img"])
+        else:
+            base_media = (
+                f'<img class="pub-img" src="{paper["img"]}" alt="" '
+                f'width="{img_size}" height="{img_size}" loading="lazy" decoding="async">'
+            )
+            hover_src = paper["imgHover"]
+
+        hover_media = (
+            f'<img class="pub-img pub-img-hover" src="{hover_src}" '
+            f'alt="" width="{img_size}" height="{img_size}" loading="lazy" decoding="async">'
+        )
+
         links_line = f"              {links_html}\n" if links_html else ""
         rows.append(
             "          <tr>\n"
             '            <td style="padding:20px;width:25%;vertical-align:middle">\n'
             f'              <div class="one"{container_style}>\n'
             f'                <div class="two"><div class="pub-img-viewport"{hover_crop_style}>'
-            f'<div class="pub-img-stage"><img class="pub-img pub-img-hover" src="{paper["imgHover"]}" '
-            f'alt="" width="{img_size}" height="{img_size}" loading="lazy" decoding="async"></div></div></div>\n'
+            f'<div class="pub-img-stage">{hover_media}</div></div></div>\n'
             f'                <div class="pub-img-viewport pub-img-viewport-base"{base_crop_style}>'
-            f'<div class="pub-img-stage"><img class="pub-img" src="{paper["img"]}" alt="" '
-            f'width="{img_size}" height="{img_size}" loading="lazy" decoding="async"></div></div>\n'
+            f'<div class="pub-img-stage">{base_media}</div></div>\n'
             "              </div>\n"
             "            </td>\n"
             '            <td style="padding:20px;width:75%;vertical-align:middle">\n'

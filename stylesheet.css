@@ -216,6 +216,10 @@ name {
   transform: scale(var(--scale)) translate(var(--shift-x), var(--shift-y));
 }
 
+.pub-img-viewport .pub-video {
+  background: #fff;
+}
+
 .fade {
   transition: opacity .2s ease-in-out;
   -moz-transition: opacity .2s ease-in-out;
