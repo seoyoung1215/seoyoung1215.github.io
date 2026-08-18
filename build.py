@@ -80,8 +80,23 @@ def render_publications_html(publications: list) -> str:
             paper.get("imgCropHover"), paper.get("imgZoomHover"), img_size
         )
 
+        # A stack keeps independent GIF timelines while sharing one hover layer.
+        if paper.get("imgStack"):
+            stack_items = []
+            for media in paper["imgStack"]:
+                stack_items.append(
+                    f'<img class="pub-img pub-img-stack-item" src="{media["src"]}" '
+                    f'alt="{media.get("alt", "")}" width="{media.get("width", img_size)}" '
+                    f'height="{media.get("height", img_size)}" loading="lazy" decoding="async">'
+                )
+            base_media = (
+                '<div class="pub-img pub-img-stack-box"><div class="pub-img-stack">'
+                + "".join(stack_items)
+                + "</div></div>"
+            )
+            hover_src = paper.get("imgHover")
         # With `video`, the clip is the resting thumbnail and `img` becomes the hover still.
-        if paper.get("video"):
+        elif paper.get("video"):
             base_media = (
                 f'<video class="pub-img pub-video" src="{paper["video"]}" '
                 f'poster="{paper.get("videoPoster", paper["img"])}" '
@@ -94,26 +109,34 @@ def render_publications_html(publications: list) -> str:
                 f'<img class="pub-img" src="{paper["img"]}" alt="" '
                 f'width="{img_size}" height="{img_size}" loading="lazy" decoding="async">'
             )
-            hover_src = paper["imgHover"]
+            hover_src = paper.get("imgHover")
 
-        hover_media = (
-            f'<img class="pub-img pub-img-hover" src="{hover_src}" '
-            f'alt="" width="{img_size}" height="{img_size}" loading="lazy" decoding="async">'
-        )
+        hover_layer = ""
+        if hover_src:
+            hover_media = (
+                f'<img class="pub-img pub-img-hover" src="{hover_src}" '
+                f'alt="" width="{img_size}" height="{img_size}" loading="lazy" decoding="async">'
+            )
+            hover_layer = (
+                f'                <div class="two"><div class="pub-img-viewport"{hover_crop_style}>'
+                f'<div class="pub-img-stage">{hover_media}</div></div></div>\n'
+            )
 
+        title_html = f'<papertitle>{paper["title"]}</papertitle>'
+        if paper.get("titleLink"):
+            title_html = f'<a href="{paper["titleLink"]}">{title_html}</a>'
         links_line = f"              {links_html}\n" if links_html else ""
         rows.append(
             "          <tr>\n"
             '            <td style="padding:20px;width:25%;vertical-align:middle">\n'
             f'              <div class="one"{container_style}>\n'
-            f'                <div class="two"><div class="pub-img-viewport"{hover_crop_style}>'
-            f'<div class="pub-img-stage">{hover_media}</div></div></div>\n'
+            f'{hover_layer}'
             f'                <div class="pub-img-viewport pub-img-viewport-base"{base_crop_style}>'
             f'<div class="pub-img-stage">{base_media}</div></div>\n'
             "              </div>\n"
             "            </td>\n"
             '            <td style="padding:20px;width:75%;vertical-align:middle">\n'
-            f'              <a href="{paper["titleLink"]}"><papertitle>{paper["title"]}</papertitle></a><br>\n'
+            f"              {title_html}<br>\n"
             f'              {paper["authors"]}<br>\n'
             f'              <em>{paper["venue"]}</em>, {paper["year"]}{award_html}<br>\n'
             f"{links_line}"

@@ -1,12 +1,38 @@
 [
   {
+    "img": "images/condvln_gibson.gif",
+    "imgStack": [
+      {
+        "src": "images/condvln_gibson.gif",
+        "width": 320,
+        "height": 123,
+        "alt": "Gibson Deep Nested Conditional navigation example"
+      },
+      {
+        "src": "images/condvln_mp3d_nested_chain.gif",
+        "width": 320,
+        "height": 78,
+        "alt": "Matterport3D Nested Chain Conditional navigation example"
+      }
+    ],
+    "imgHover": "images/condvln_pipeline.jpg",
+    "title": "<em>If, Then, Otherwise</em>: Diagnosing Conditional Branching in Vision-Language Navigation",
+    "titleLink": "https://condvln.github.io/",
+    "authors": "<strong>Seoyoung Lee</strong>, Neel P. Bhatt, Pranay Samineni, Cong Liu, SP Sharan, Timothy Barclay, Gregory M. Wagner, Daniel Milan, Sandeep Chinchali, Ufuk Topcu, Atlas Wang",
+    "venue": "arXiv",
+    "year": "2026",
+    "links": [
+      { "label": "project page", "url": "https://condvln.github.io/" }
+    ]
+  },
+  {
     "img": "images/a4d1.jpg",
     "video": "images/a4d_teaser.mp4",
     "videoPoster": "images/a4d_teaser_poster.jpg",
     "title": "What Objects Enable, Not What They Are: Functional Latent Spaces for Affordance Reasoning",
     "titleLink": "https://a4dance-reasoning.github.io/",
     "authors": "Rohan Siva, Neel P. Bhatt, Yunhao Yang, <strong>Seoyoung Lee</strong>, Nishant Gadde, Christian Ellis, Alvaro Velasquez, Zhangyang Wang, Ufuk Topcu",
-    "venue": "ArXiv",
+    "venue": "arXiv",
     "year": "2026",
     "links": [
       { "label": "project page", "url": "https://a4dance-reasoning.github.io/" },
@@ -44,6 +70,18 @@
     ]
   },
   {
+    "img": "images/demystifying_fig1.png",
+    "imgHover": "images/demystifying_fig4.png",
+    "title": "Demystifying the Visual Quality Paradox in Multimodal Large Language Models",
+    "titleLink": "https://arxiv.org/pdf/2506.15645",
+    "authors": "Shuo Xing, Lanqing Guo, Hongyuan Hua, <strong>Seoyoung Lee</strong>, Peiran Li, Yufei Wang, Zhangyang Wang, Zhengzhong Tu",
+    "venue": "arXiv",
+    "year": "2025",
+    "links": [
+      { "label": "paper", "url": "https://arxiv.org/pdf/2506.15645" }
+    ]
+  },
+  {
     "img": "images/S2H1.jpg",
     "imgHover": "images/S2H2.jpg",
     "title": "Joint Object Detection and Sound Source Separation",
@@ -60,7 +98,7 @@
     "imgHover": "images/eva2.jpg",
     "title": "Expressive Gaussian Human Avatars from Monocular RGB Video",
     "titleLink": "https://evahuman.github.io/",
-    "authors": "Hezhen Hu, Zhiwen Fan, Tianhao Wu, Yihan Xi, Seoyoung Lee, Georgios Pavlakos, Zhangyang Wang",
+    "authors": "Hezhen Hu, Zhiwen Fan, Tianhao Wu, Yihan Xi, <strong>Seoyoung Lee</strong>, Georgios Pavlakos, Zhangyang Wang",
     "venue": "NeurIPS",
     "year": "2024",
     "links": [
