@@ -22,7 +22,8 @@
     "venue": "arXiv",
     "year": "2026",
     "links": [
-      { "label": "project page", "url": "https://condvln.github.io/" }
+      { "label": "project page", "url": "https://condvln.github.io/" },
+      { "label": "paper", "url": "https://arxiv.org/abs/2608.17318" }
     ]
   },
   {
