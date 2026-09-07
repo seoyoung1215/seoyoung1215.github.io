@@ -33,7 +33,7 @@
     "title": "What Objects Enable, Not What They Are: Functional Latent Spaces for Affordance Reasoning",
     "titleLink": "https://a4dance-reasoning.github.io/",
     "authors": "Rohan Siva, Neel P. Bhatt, Yunhao Yang, <strong>Seoyoung Lee</strong>, Nishant Gadde, Christian Ellis, Alvaro Velasquez, Zhangyang Wang, Ufuk Topcu",
-    "venue": "arXiv",
+    "venue": "CoRL",
     "year": "2026",
     "links": [
       { "label": "project page", "url": "https://a4dance-reasoning.github.io/" },
