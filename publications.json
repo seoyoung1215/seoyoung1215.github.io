@@ -3,14 +3,13 @@
     "img": "images/condvln_map.gif",
     "imgHover": "images/condvln_alarmclock_run.gif",
     "title": "<em>If, Then, Otherwise</em>: Diagnosing Conditional Branching in Vision-Language Navigation",
-    "titleLink": "https://condvln.github.io/",
+    "titleLink": "https://arxiv.org/abs/2608.17318",
     "authors": "<strong>Seoyoung Lee</strong>, Neel P. Bhatt, Pranay Samineni, Cong Liu, SP Sharan, Timothy Barclay, Gregory M. Wagner, Daniel Milan, Sandeep Chinchali, Ufuk Topcu, Atlas Wang",
     "venue": "CoRL SISREN",
     "year": "2026",
     "links": [
       {
-        "label": "project page",
-        "url": "https://condvln.github.io/"
+        "label": "project page"
       },
       {
         "label": "paper",

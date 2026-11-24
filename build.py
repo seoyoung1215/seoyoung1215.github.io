@@ -70,7 +70,7 @@ def render_publications_html(publications: list) -> str:
     rows = []
     for paper in publications:
         links_html = " / ".join(
-            f'<a href="{link["url"]}">{link["label"]}</a>' for link in paper.get("links", [])
+            (f'<a href="{link["url"]}">{link["label"]}</a>' if link.get("url") else link["label"]) for link in paper.get("links", [])
         )
         award_html = f' &nbsp; {paper["award"]}' if paper.get("award") else ""
         img_size = paper.get("imgSize", PUBLICATION_IMAGE_SIZE)
